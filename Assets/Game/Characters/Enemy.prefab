@@ -64,6 +64,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1749510570, guid: f065e732396ef394f905035236ed8359, type: 3}
+      propertyPath: m_Speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749510570, guid: f065e732396ef394f905035236ed8359, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1950249000333271950, guid: f065e732396ef394f905035236ed8359, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -153,6 +161,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcdb497d783b43389e302cbd9b1152aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2898358860207527335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4510892956269818581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde8508f3f633204abe04dd323d0b04d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 5
 --- !u!4 &8741168288297445561 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1950249000333271950, guid: f065e732396ef394f905035236ed8359, type: 3}

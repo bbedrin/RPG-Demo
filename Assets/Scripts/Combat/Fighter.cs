@@ -1,7 +1,6 @@
-﻿using System;
+﻿using UnityEngine;
 using RPG.Core;
 using RPG.Movement;
-using UnityEngine;
 
 namespace RPG.Combat
 {
@@ -12,7 +11,7 @@ namespace RPG.Combat
         [SerializeField] private float weaponDamage = 5f;
         
         private Health _target;
-        private float _timeSinceLastAttack = 0f;
+        private float _timeSinceLastAttack = Mathf.Infinity;
         
         private static readonly int AttackTransitionTrigger = Animator.StringToHash("attack");
         private static readonly int StopAttackTransitionTrigger = Animator.StringToHash("stopAttack");
@@ -63,7 +62,7 @@ namespace RPG.Combat
             return Vector3.Distance(transform.position, _target.gameObject.transform.position) < weaponRange;
         }
 
-        public bool CanAttack(CombatTarget combatTarget)
+        public bool CanAttack(GameObject combatTarget)
         {
             if (combatTarget == null) return false;
             
@@ -71,7 +70,7 @@ namespace RPG.Combat
             return targetToTest != null && !targetToTest.IsDead();
         }
         
-        public void Attack(CombatTarget combatTarget)
+        public void Attack(GameObject combatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
             _target = combatTarget.GetComponent<Health>();

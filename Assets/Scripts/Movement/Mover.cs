@@ -9,17 +9,21 @@ namespace RPG.Movement
         [SerializeField] private Transform target;
 
         private NavMeshAgent _navMeshAgent;
+        private Health _health;
         
         private static readonly int ForwardSpeed = Animator.StringToHash("forwardSpeed");
 
         private void Start()
         {
             _navMeshAgent = GetComponent<NavMeshAgent>();
+            _health = GetComponent<Health>();
         }
 
         // Update is called once per frame
         private void Update()
         {
+            _navMeshAgent.enabled = !_health.IsDead();
+            
             UpdateAnimator();
         }
 
