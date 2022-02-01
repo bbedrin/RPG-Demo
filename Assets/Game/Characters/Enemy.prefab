@@ -78,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1950249000333271950, guid: f065e732396ef394f905035236ed8359, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.623802
+      value: -3.16
       objectReference: {fileID: 0}
     - target: {fileID: 1950249000333271950, guid: f065e732396ef394f905035236ed8359, type: 3}
       propertyPath: m_LocalPosition.y
@@ -86,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1950249000333271950, guid: f065e732396ef394f905035236ed8359, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.6124258
+      value: -2.65
       objectReference: {fileID: 0}
     - target: {fileID: 1950249000333271950, guid: f065e732396ef394f905035236ed8359, type: 3}
       propertyPath: m_LocalRotation.w
@@ -122,7 +122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4414987439511519862, guid: f065e732396ef394f905035236ed8359, type: 3}
       propertyPath: healthPoints
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6685481645489404386, guid: f065e732396ef394f905035236ed8359, type: 3}
       propertyPath: m_Name
@@ -174,6 +174,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseDistance: 5
+  suspicionTime: 5
+  patrolPath: {fileID: 0}
+  waypointTolerance: 1
+  waypointDwellTime: 3
 --- !u!4 &8741168288297445561 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1950249000333271950, guid: f065e732396ef394f905035236ed8359, type: 3}
