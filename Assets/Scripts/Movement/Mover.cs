@@ -1,10 +1,11 @@
 using RPG.Core;
+using RPG.Saving;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace RPG.Movement
 {
-    public class Mover : MonoBehaviour, IAction
+    public class Mover : MonoBehaviour, IAction, ISaveable
     {
         [SerializeField] private float maxSpeed = 6f;
 
@@ -18,8 +19,7 @@ namespace RPG.Movement
             _navMeshAgent = GetComponent<NavMeshAgent>();
             _health = GetComponent<Health>();
         }
-
-        // Update is called once per frame
+        
         private void Update()
         {
             _navMeshAgent.enabled = !_health.IsDead();
@@ -47,12 +47,36 @@ namespace RPG.Movement
 
         private void UpdateAnimator()
         {
-            Vector3 velocity = _navMeshAgent.velocity;
-            Vector3 localVelocity = transform.InverseTransformDirection(velocity);
-            float speed = localVelocity.z;
+            var velocity = _navMeshAgent.velocity;
+            var localVelocity = transform.InverseTransformDirection(velocity);
+            var speed = localVelocity.z;
             GetComponent<Animator>().SetFloat(ForwardSpeed, speed);
         }
+
+        [System.Serializable]
+        private struct MoverSaveData
+        {
+            public SerializableVector3 position;
+            public SerializableVector3 rotation;
+        }
         
+        public object CaptureState()
+        {
+            return new MoverSaveData
+            {
+                position = new SerializableVector3(transform.position),
+                rotation = new SerializableVector3(transform.eulerAngles)
+            };
+        }
+
+        public void RestoreState(object state)
+        {
+            var data = (MoverSaveData) state;
+            _navMeshAgent.enabled = false;
+            _navMeshAgent.Warp(data.position.ToVector());
+            transform.eulerAngles = data.rotation.ToVector();
+            _navMeshAgent.enabled = true;
+        }
     }
 }
 

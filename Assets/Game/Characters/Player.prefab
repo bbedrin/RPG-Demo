@@ -51,6 +51,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2085106365075374830, guid: f065e732396ef394f905035236ed8359, type: 3}
+      propertyPath: uniqueIdentifier
+      value: player
+      objectReference: {fileID: 0}
     - target: {fileID: 6685481645489404386, guid: f065e732396ef394f905035236ed8359, type: 3}
       propertyPath: m_Name
       value: Player
@@ -70,18 +74,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6685481645489404386, guid: f065e732396ef394f905035236ed8359, type: 3}
   m_PrefabInstance: {fileID: 6656598386211063095}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &985626876270465918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47119383596022997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d30ceaf428d44c86a81c1b02d85b8bde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &1945901513
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -96,6 +88,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1.2, z: 0}
+--- !u!114 &985626876270465918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47119383596022997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30ceaf428d44c86a81c1b02d85b8bde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5147704348395988665 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1950249000333271950, guid: f065e732396ef394f905035236ed8359, type: 3}
